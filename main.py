@@ -53,11 +53,11 @@ def get_text(message):
 
 
 def play_quiz(quizzes):
-    """퀴즈를 하나씩 내고, 맞힌 개수를 세요."""
+    """퀴즈를 하나씩 내고, 점수를 돌려줘요. 퀴즈가 없으면 None을 돌려줘요."""
     # 퀴즈가 하나도 없을 때
     if len(quizzes) == 0:
         print("\n📭 아직 등록된 퀴즈가 없어요. 먼저 퀴즈를 추가해 주세요!\n")
-        return
+        return None
 
     print(f"\n📝 퀴즈를 시작합니다! (총 {len(quizzes)}문제)\n")
     correct_count = 0  # 맞힌 개수를 세는 변수
@@ -77,7 +77,7 @@ def play_quiz(quizzes):
     score = correct_count * 100 // len(quizzes)  # 100점 만점으로 바꾸기
     print("=" * 40)
     print(f"🏆 결과: {len(quizzes)}문제 중 {correct_count}문제 정답! ({score}점)")
-    print("=" * 40 + "\n")
+    return score  # 점수를 main에게 알려줘요
 
 
 def add_quiz(quizzes):
@@ -114,22 +114,39 @@ def list_quizzes(quizzes):
     print("-" * 40 + "\n")
 
 
+def show_score(best_score):
+    """최고 점수를 보여줘요."""
+    if best_score is None:
+        print("\n🙈 아직 퀴즈를 풀지 않았어요. 1번을 눌러 도전해 보세요!\n")
+    else:
+        print(f"\n🏆 최고 점수: {best_score}점\n")
+
+
 def main():
     """게임을 시작해요."""
     quizzes = get_default_quizzes()  # 퀴즈 목록 준비
+    best_score = None  # 아직 아무 점수도 없다는 뜻
 
     while True:
         show_menu()
         choice = get_number("선택: ", 1, 5)
 
         if choice == 1:
-            play_quiz(quizzes)
+            score = play_quiz(quizzes)
+
+            # 퀴즈를 끝까지 풀었으면 최고 점수랑 비교해요
+            if score is not None:
+                if best_score is None or score > best_score:
+                    best_score = score
+                    print("🎉 새로운 최고 점수입니다!")
+                print("=" * 40 + "\n")
+
         elif choice == 2:
             add_quiz(quizzes)
         elif choice == 3:
             list_quizzes(quizzes)
         elif choice == 4:
-            print("\n🏆 점수 확인은 곧 만들 거예요!\n")
+            show_score(best_score)
         elif choice == 5:
             print("\n👋 게임을 종료합니다. 다음에 또 만나요!")
             break  # while 반복 멈추기
