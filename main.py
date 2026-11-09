@@ -101,6 +101,19 @@ def add_quiz(quizzes):
     print(f"\n✅ 퀴즈가 추가되었습니다! (지금 퀴즈는 모두 {len(quizzes)}개)\n")
 
 
+def list_quizzes(quizzes):
+    """등록된 퀴즈 문제들을 번호와 함께 보여줘요."""
+    if len(quizzes) == 0:
+        print("\n📭 아직 등록된 퀴즈가 없어요.\n")
+        return
+
+    print(f"\n📋 등록된 퀴즈 목록 (총 {len(quizzes)}개)\n")
+    print("-" * 40)
+    for number, quiz in enumerate(quizzes, start=1):
+        print(f"[{number}] {quiz.question}")
+    print("-" * 40 + "\n")
+
+
 def main():
     """게임을 시작해요."""
     quizzes = get_default_quizzes()  # 퀴즈 목록 준비
@@ -114,7 +127,7 @@ def main():
         elif choice == 2:
             add_quiz(quizzes)
         elif choice == 3:
-            print("\n📋 퀴즈 목록은 곧 만들 거예요!\n")
+            list_quizzes(quizzes)
         elif choice == 4:
             print("\n🏆 점수 확인은 곧 만들 거예요!\n")
         elif choice == 5:
