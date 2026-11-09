@@ -97,4 +97,4 @@ python-git-quiz/
 
 - 기능 단위로 커밋했습니다. (메뉴 → Quiz 클래스 → 기본 퀴즈 → 퀴즈 풀기 → 추가 → 목록 → 점수 → 구조 정리 → 파일 저장 → README)
 - 퀴즈 풀기 기능은 `feature/play-quiz` 브랜치에서 작업한 뒤 `main`에 병합했습니다.
-- 사용한 Git 명령어: `init`, `add`, `commit`, `push`, `checkout`, `merge`, `clone`, `pull`
+- 사용한 Git 명령어: `init`, `add`, `commit`, `push`, `checkout`, `merge`, `clone`, `pull`- clone한 저장소에서 추가한 줄입니다. (clone/pull 실습)
