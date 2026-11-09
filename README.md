@@ -100,3 +100,10 @@ python-git-quiz/
 - clone한 저장소에서 추가한 줄입니다.
 - 사용한 Git 명령어: `init`, `add`, `commit`, `push`, `checkout`, `merge`, `clone`, `pull`
 
+<img width="1917" height="1078" alt="스크린샷 2026-11-09 111629" src="https://github.com/user-attachments/assets/dd9b597f-c092-4434-9c72-5a715788960b" />
+<img width="462" height="582" alt="스크린샷 2026-11-09 111741" src="https://github.com/user-attachments/assets/c36330d9-46fd-4e02-bee7-c29f9fc0c688" />
+<img width="953" height="1010" alt="스크린샷 2026-11-09 111835" src="https://github.com/user-attachments/assets/1fed3ea7-fb09-493b-aff1-4f2898c48919" />
+<img width="461" height="638" alt="스크린샷 2026-11-09 111933" src="https://github.com/user-attachments/assets/1b8982c0-e65f-4bb8-b921-a588e913f6cb" />
+<img width="968" height="1013" alt="스크린샷 2026-11-09 111905" src="https://github.com/user-attachments/assets/23e13b6d-d8d9-489c-89ae-cdc8547ed0c0" />
+
+
