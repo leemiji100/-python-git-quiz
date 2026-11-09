@@ -1,3 +1,4 @@
+from quiz import Quiz  # 새 퀴즈를 만들 때 쓸 붕어빵 틀
 from default_quizzes import get_default_quizzes  # 기본 퀴즈 8개 가져오기
 
 
@@ -39,6 +40,18 @@ def get_number(message, min_num, max_num):
         return number  # 통과! 숫자를 돌려줘요
 
 
+def get_text(message):
+    """빈칸이 아닌 글자를 받을 때까지 계속 물어봐요."""
+    while True:
+        text = input(message).strip()
+
+        if text == "":
+            print("⚠️ 아무것도 입력하지 않았어요. 다시 입력하세요.")
+            continue
+
+        return text
+
+
 def play_quiz(quizzes):
     """퀴즈를 하나씩 내고, 맞힌 개수를 세요."""
     # 퀴즈가 하나도 없을 때
@@ -67,6 +80,27 @@ def play_quiz(quizzes):
     print("=" * 40 + "\n")
 
 
+def add_quiz(quizzes):
+    """사용자에게 새 퀴즈를 입력받아 목록에 추가해요."""
+    print("\n📌 새로운 퀴즈를 추가합니다.\n")
+
+    question = get_text("문제를 입력하세요: ")
+
+    # 보기 4개를 하나씩 받아서 리스트에 담아요
+    choices = []
+    for i in range(1, 5):
+        choice = get_text(f"선택지 {i}: ")
+        choices.append(choice)
+
+    answer = get_number("정답 번호 (1-4): ", 1, 4)
+
+    # 붕어빵 틀로 새 퀴즈를 찍어내서 목록에 넣어요
+    new_quiz = Quiz(question, choices, answer)
+    quizzes.append(new_quiz)
+
+    print(f"\n✅ 퀴즈가 추가되었습니다! (지금 퀴즈는 모두 {len(quizzes)}개)\n")
+
+
 def main():
     """게임을 시작해요."""
     quizzes = get_default_quizzes()  # 퀴즈 목록 준비
@@ -78,7 +112,7 @@ def main():
         if choice == 1:
             play_quiz(quizzes)
         elif choice == 2:
-            print("\n📌 퀴즈 추가는 곧 만들 거예요!\n")
+            add_quiz(quizzes)
         elif choice == 3:
             print("\n📋 퀴즈 목록은 곧 만들 거예요!\n")
         elif choice == 4:
