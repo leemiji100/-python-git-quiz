@@ -79,7 +79,17 @@
                 "git init"
             ],
             "answer": 4
+        },
+        {
+            "question": "1+1은?",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "answer": 2
         }
     ],
-    "best_score": null
+    "best_score": 33
 }
