@@ -79,16 +79,6 @@
                 "git init"
             ],
             "answer": 4
-        },
-        {
-            "question": "1",
-            "choices": [
-                "5",
-                "1",
-                "1",
-                "1"
-            ],
-            "answer": 1
         }
     ],
     "best_score": null
