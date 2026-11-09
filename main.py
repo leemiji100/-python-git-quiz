@@ -1,3 +1,6 @@
+from default_quizzes import get_default_quizzes  # 기본 퀴즈 8개 가져오기
+
+
 def show_menu():
     """메뉴 화면을 보여줘요."""
     print("=" * 40)
@@ -36,14 +39,44 @@ def get_number(message, min_num, max_num):
         return number  # 통과! 숫자를 돌려줘요
 
 
+def play_quiz(quizzes):
+    """퀴즈를 하나씩 내고, 맞힌 개수를 세요."""
+    # 퀴즈가 하나도 없을 때
+    if len(quizzes) == 0:
+        print("\n📭 아직 등록된 퀴즈가 없어요. 먼저 퀴즈를 추가해 주세요!\n")
+        return
+
+    print(f"\n📝 퀴즈를 시작합니다! (총 {len(quizzes)}문제)\n")
+    correct_count = 0  # 맞힌 개수를 세는 변수
+
+    for number, quiz in enumerate(quizzes, start=1):
+        print("-" * 40)
+        quiz.show(number)
+        user_answer = get_number("정답 입력: ", 1, 4)  # 문지기 함수 재활용!
+
+        if quiz.is_correct(user_answer):
+            print("✅ 정답입니다!\n")
+            correct_count += 1  # 맞힌 개수 1 늘리기
+        else:
+            right_text = quiz.choices[quiz.answer - 1]
+            print(f"❌ 아쉬워요! 정답은 {quiz.answer}번 ({right_text})이에요.\n")
+
+    score = correct_count * 100 // len(quizzes)  # 100점 만점으로 바꾸기
+    print("=" * 40)
+    print(f"🏆 결과: {len(quizzes)}문제 중 {correct_count}문제 정답! ({score}점)")
+    print("=" * 40 + "\n")
+
+
 def main():
     """게임을 시작해요."""
+    quizzes = get_default_quizzes()  # 퀴즈 목록 준비
+
     while True:
         show_menu()
         choice = get_number("선택: ", 1, 5)
 
         if choice == 1:
-            print("\n📝 퀴즈 풀기는 곧 만들 거예요!\n")
+            play_quiz(quizzes)
         elif choice == 2:
             print("\n📌 퀴즈 추가는 곧 만들 거예요!\n")
         elif choice == 3:
