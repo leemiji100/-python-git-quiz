@@ -1,0 +1,95 @@
+{
+    "quizzes": [
+        {
+            "question": "Python에서 화면에 글자를 보여주는 함수는?",
+            "choices": [
+                "input",
+                "print",
+                "len",
+                "int"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "True와 False, 두 가지 값만 가지는 자료형은?",
+            "choices": [
+                "int",
+                "str",
+                "list",
+                "bool"
+            ],
+            "answer": 4
+        },
+        {
+            "question": "몇 번 반복할지 정해져 있을 때 주로 쓰는 반복문은?",
+            "choices": [
+                "for",
+                "while",
+                "if",
+                "def"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Python에서 함수를 만들 때 쓰는 키워드는?",
+            "choices": [
+                "class",
+                "def",
+                "return",
+                "import"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "클래스로 객체를 만들 때 자동으로 실행되는 메서드는?",
+            "choices": [
+                "__init__",
+                "__main__",
+                "__str__",
+                "__call__"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "작업한 내용을 사진처럼 기록하는 Git 명령어는?",
+            "choices": [
+                "git add",
+                "git commit",
+                "git push",
+                "git clone"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "GitHub에 있는 변경사항을 내 컴퓨터로 가져오는 명령어는?",
+            "choices": [
+                "git push",
+                "git pull",
+                "git init",
+                "git status"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "새 Git 저장소를 처음 만드는 명령어는?",
+            "choices": [
+                "git start",
+                "git new",
+                "git make",
+                "git init"
+            ],
+            "answer": 4
+        },
+        {
+            "question": "1",
+            "choices": [
+                "5",
+                "1",
+                "1",
+                "1"
+            ],
+            "answer": 1
+        }
+    ],
+    "best_score": null
+}

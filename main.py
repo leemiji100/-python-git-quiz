@@ -7,8 +7,9 @@ def main():
     try:
         game.run()
     except (KeyboardInterrupt, EOFError):
-        # Ctrl+C를 눌러도 에러 없이 끝나게 해줘요
-        print("\n\n👋 게임을 종료합니다. 다음에 또 만나요!")
+        # Ctrl+C를 눌러도 저장하고 안전하게 끝나요
+        game.save_state()
+        print("\n\n💾 저장 완료! 👋 게임을 종료합니다. 다음에 또 만나요!")
 
 
 main()
